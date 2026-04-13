@@ -1,0 +1,489 @@
+
+*** Running vivado
+    with args -log spi_comm_test_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source spi_comm_test_top.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source spi_comm_test_top.tcl -notrace
+Command: synth_design -top spi_comm_test_top -part xc7s25csga225-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7s25'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s25'
+INFO: [Device 21-403] Loading part xc7s25csga225-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 4816 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 776.562 ; gain = 179.027
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'spi_comm_test_top' [C:/Users/ZhuanZ/Desktop/transplant/FPGA_prj_code/spi_comm_test/rtl/spi_comm_test_top.v:3]
+	Parameter INTER_PULSE_GAP_CYCLES bound to: 16 - type: integer 
+	Parameter DATA_PERIOD_CYCLES bound to: 400000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'spi_comm_test_gen' [C:/Users/ZhuanZ/Desktop/transplant/FPGA_prj_code/spi_comm_test/rtl/spi_comm_test_gen.v:3]
+	Parameter INTER_PULSE_GAP_CYCLES bound to: 16 - type: integer 
+	Parameter DATA_PERIOD_CYCLES bound to: 400000 - type: integer 
+	Parameter S_IDLE bound to: 4'b0000 
+	Parameter S_LOAD bound to: 4'b0001 
+	Parameter S_SET_A bound to: 4'b0010 
+	Parameter S_PULSE_A bound to: 4'b0011 
+	Parameter S_GAP_A bound to: 4'b0100 
+	Parameter S_SET_B bound to: 4'b0101 
+	Parameter S_PULSE_B bound to: 4'b0110 
+	Parameter S_GAP_B bound to: 4'b0111 
+	Parameter S_PULSE_CORR bound to: 4'b1000 
+	Parameter S_WAIT_INT_HI bound to: 4'b1001 
+	Parameter S_WAIT_INT_LO bound to: 4'b1010 
+INFO: [Synth 8-6155] done synthesizing module 'spi_comm_test_gen' (1#1) [C:/Users/ZhuanZ/Desktop/transplant/FPGA_prj_code/spi_comm_test/rtl/spi_comm_test_gen.v:3]
+INFO: [Synth 8-6157] synthesizing module 'comm_spi_slave_test' [C:/Users/ZhuanZ/Desktop/transplant/FPGA_prj_code/spi_comm_test/rtl/comm_spi_slave_test.v:3]
+	Parameter IDXW bound to: 16 - type: integer 
+	Parameter PKT_BYTES bound to: 22 - type: integer 
+	Parameter PKT_BITS bound to: 176 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element mosi_sync_reg was removed.  [C:/Users/ZhuanZ/Desktop/transplant/FPGA_prj_code/spi_comm_test/rtl/comm_spi_slave_test.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'comm_spi_slave_test' (2#1) [C:/Users/ZhuanZ/Desktop/transplant/FPGA_prj_code/spi_comm_test/rtl/comm_spi_slave_test.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'spi_comm_test_top' (3#1) [C:/Users/ZhuanZ/Desktop/transplant/FPGA_prj_code/spi_comm_test/rtl/spi_comm_test_top.v:3]
+WARNING: [Synth 8-3331] design comm_spi_slave_test has unconnected port spi_mosi
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 840.336 ; gain = 242.801
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 841.418 ; gain = 243.883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 841.418 ; gain = 243.883
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/ZhuanZ/Desktop/transplant/FPGA_prj_code/spi_comm_test/xdc/spi_comm_test_top_template.xdc]
+Finished Parsing XDC File [C:/Users/ZhuanZ/Desktop/transplant/FPGA_prj_code/spi_comm_test/xdc/spi_comm_test_top_template.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/ZhuanZ/Desktop/transplant/FPGA_prj_code/spi_comm_test/xdc/spi_comm_test_top_template.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/spi_comm_test_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/spi_comm_test_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 976.129 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 976.129 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 976.129 ; gain = 378.594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7s25csga225-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 976.129 ; gain = 378.594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 976.129 ; gain = 378.594
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'spi_comm_test_gen'
+INFO: [Synth 8-5544] ROM "idx_a_data" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "y1_data" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "max_idx" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "max_valid" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "corr_valid" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-4471] merging register 'fpga_int_reg' into 'packet_ready_reg' [C:/Users/ZhuanZ/Desktop/transplant/FPGA_prj_code/spi_comm_test/rtl/comm_spi_slave_test.v:67]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                             0000 |                             0000
+                  S_LOAD |                             0001 |                             0001
+                 S_SET_A |                             0010 |                             0010
+               S_PULSE_A |                             0011 |                             0011
+                 S_GAP_A |                             0100 |                             0100
+                 S_SET_B |                             0101 |                             0101
+               S_PULSE_B |                             0110 |                             0110
+                 S_GAP_B |                             0111 |                             0111
+            S_PULSE_CORR |                             1000 |                             1000
+           S_WAIT_INT_HI |                             1001 |                             1001
+           S_WAIT_INT_LO |                             1010 |                             1010
+                  iSTATE |                             1011 |                             1111
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'spi_comm_test_gen'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 976.129 ; gain = 378.594
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     31 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	              176 Bit    Registers := 2     
+	               32 Bit    Registers := 1     
+	               31 Bit    Registers := 6     
+	               16 Bit    Registers := 3     
+	               14 Bit    Registers := 1     
+	               13 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input    176 Bit        Muxes := 2     
+	  12 Input     32 Bit        Muxes := 1     
+	  12 Input     16 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 2     
+	  12 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 18    
+	  12 Input      1 Bit        Muxes := 12    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module spi_comm_test_gen 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     31 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               31 Bit    Registers := 6     
+	               16 Bit    Registers := 1     
+	               14 Bit    Registers := 1     
+	               13 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	  12 Input     32 Bit        Muxes := 1     
+	  12 Input     16 Bit        Muxes := 1     
+	  12 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	  12 Input      1 Bit        Muxes := 12    
+Module comm_spi_slave_test 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	              176 Bit    Registers := 2     
+	               16 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input    176 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 16    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 90 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[0]' (FDRE) to 'u_gen/y1_data_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[1]' (FDRE) to 'u_gen/y1_data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[0]' (FDRE) to 'u_gen/conv_out_y1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[2]' (FDRE) to 'u_gen/y1_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[1]' (FDRE) to 'u_gen/conv_out_y1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[0]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[96]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[3]' (FDRE) to 'u_gen/y2_data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[2]' (FDRE) to 'u_gen/conv_out_y1_reg[2]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[1]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[97]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[3]' (FDRE) to 'u_gen/conv_out_y2_reg[3]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[2]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[98]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[3]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[51]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[9]' (FDRE) to 'u_gen/y1_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[10]' (FDRE) to 'u_gen/y1_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[9]' (FDRE) to 'u_gen/conv_out_y3_reg[10]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[11]' (FDRE) to 'u_gen/y1_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[10]' (FDRE) to 'u_gen/conv_out_y1_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[9]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[10]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[12]' (FDRE) to 'u_gen/y1_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[11]' (FDRE) to 'u_gen/conv_out_y3_reg[12]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[10]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[105]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[13]' (FDRE) to 'u_gen/y1_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[12]' (FDRE) to 'u_gen/conv_out_y3_reg[13]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[11]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[12]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[14]' (FDRE) to 'u_gen/y1_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[13]' (FDRE) to 'u_gen/conv_out_y1_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[12]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[13]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[15]' (FDRE) to 'u_gen/y1_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[14]' (FDRE) to 'u_gen/conv_out_y3_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[13]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[104]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[16]' (FDRE) to 'u_gen/y1_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[15]' (FDRE) to 'u_gen/conv_out_y1_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[14]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[17]' (FDRE) to 'u_gen/y1_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[16]' (FDRE) to 'u_gen/conv_out_y1_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[15]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[105]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[18]' (FDRE) to 'u_gen/y1_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[17]' (FDRE) to 'u_gen/conv_out_y1_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[16]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[104]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[19]' (FDRE) to 'u_gen/y1_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[18]' (FDRE) to 'u_gen/conv_out_y1_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[17]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[105]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[20]' (FDRE) to 'u_gen/y1_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[19]' (FDRE) to 'u_gen/conv_out_y3_reg[20]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[18]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[104]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[21]' (FDRE) to 'u_gen/y1_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[20]' (FDRE) to 'u_gen/conv_out_y1_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[19]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[20]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[22]' (FDRE) to 'u_gen/y1_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[21]' (FDRE) to 'u_gen/conv_out_y3_reg[22]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[20]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[105]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[23]' (FDRE) to 'u_gen/y1_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[22]' (FDRE) to 'u_gen/conv_out_y1_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[21]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[22]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[24]' (FDRE) to 'u_gen/y1_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[23]' (FDRE) to 'u_gen/conv_out_y3_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[22]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[104]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[25]' (FDRE) to 'u_gen/y1_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[24]' (FDRE) to 'u_gen/conv_out_y3_reg[25]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[23]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[26]' (FDRE) to 'u_gen/y1_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[25]' (FDRE) to 'u_gen/conv_out_y1_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[24]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[25]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[27]' (FDRE) to 'u_gen/y1_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[26]' (FDRE) to 'u_gen/conv_out_y1_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[25]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[105]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[28]' (FDRE) to 'u_gen/y1_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[27]' (FDRE) to 'u_gen/conv_out_y3_reg[28]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[26]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[104]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[29]' (FDRE) to 'u_gen/y1_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[28]' (FDRE) to 'u_gen/conv_out_y3_reg[29]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[27]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[28]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[29]' (FDRE) to 'u_gen/conv_out_y1_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[28]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[29]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[29]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[105]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[30]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[31]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[31]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[32]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[32]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[33]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[33]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[34]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[34]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[35]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[35]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[36]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[36]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[37]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[37]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[38]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[38]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[39]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[39]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[40]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[40]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[41]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[41]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[42]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[42]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[43]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[43]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[44]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[44]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[45]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y3_data_reg[30]' (FDRE) to 'u_gen/y1_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[45]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[46]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y2_data_reg[0]' (FDRE) to 'u_gen/y1_data_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y3_reg[30]' (FDRE) to 'u_gen/conv_out_y1_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[46]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[47]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y2_data_reg[1]' (FDRE) to 'u_gen/y1_data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y2_reg[0]' (FDRE) to 'u_gen/conv_out_y1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u_comm_spi_slave/packet_buf_reg[47]' (FDCE) to 'u_comm_spi_slave/packet_buf_reg[104]'
+INFO: [Synth 8-3886] merging instance 'u_gen/y2_data_reg[2]' (FDRE) to 'u_gen/y1_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'u_gen/conv_out_y2_reg[1]' (FDRE) to 'u_gen/conv_out_y1_reg[1]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_gen/y1_data_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_comm_spi_slave/idx_b_reg_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_gen/idx_b_data_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_comm_spi_slave/idx_a_reg_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_comm_spi_slave/packet_buf_reg[143] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_gen/max_idx_reg[11] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 976.129 ; gain = 378.594
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 976.129 ; gain = 378.594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 976.129 ; gain = 378.594
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 976.129 ; gain = 378.594
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 976.863 ; gain = 379.328
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 976.863 ; gain = 379.328
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 976.863 ; gain = 379.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 976.863 ; gain = 379.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 976.863 ; gain = 379.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 976.863 ; gain = 379.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    16|
+|3     |LUT1   |     5|
+|4     |LUT2   |    93|
+|5     |LUT3   |    19|
+|6     |LUT4   |   110|
+|7     |LUT5   |    26|
+|8     |LUT6   |    50|
+|9     |FDCE   |   258|
+|10    |FDPE   |     3|
+|11    |FDRE   |   134|
+|12    |IBUF   |     5|
+|13    |OBUF   |     4|
++------+-------+------+
+
+Report Instance Areas: 
++------+-------------------+--------------------+------+
+|      |Instance           |Module              |Cells |
++------+-------------------+--------------------+------+
+|1     |top                |                    |   724|
+|2     |  u_comm_spi_slave |comm_spi_slave_test |   462|
+|3     |  u_gen            |spi_comm_test_gen   |   252|
++------+-------------------+--------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 976.863 ; gain = 379.328
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 976.863 ; gain = 244.617
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 976.863 ; gain = 379.328
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 984.668 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+133 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 984.668 ; gain = 629.336
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 984.668 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/ZhuanZ/Desktop/transplant/FPGA_prj_code/spi_comm_test/vivado_proj/spi_comm_test.runs/synth_1/spi_comm_test_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file spi_comm_test_top_utilization_synth.rpt -pb spi_comm_test_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Apr  9 15:28:37 2026...
