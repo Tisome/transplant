@@ -1,0 +1,100 @@
+# Repository-wide ignore rules for generated files and large rebuildable assets.
+
+# OS/editor scratch
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.temp
+*.bak
+*.Bak
+*.old
+*.orig
+*.swp
+*.swo
+
+# Keep reusable IDE/workspace configuration for quick resume after clone.
+!**/.eide/
+!**/.eide/**
+!**/.vscode/
+!**/.vscode/**
+!**/*.code-workspace
+
+# Local IDE/user state and logs
+**/.settings/
+**/.eide/log/
+**/.eide.usr.ctx.json
+**/.vscode/*.log
+**/.vscode/*.log.lock
+**/.vscode/.cortex-debug.*.state.json
+*.log
+JLinkLog.txt
+
+# Re-installable embedded package/cache directories
+**/.pack/
+**/.cmsis/
+
+# Common build/output directories
+**/build/
+**/Build/
+**/bin/
+**/.obj/
+**/out/
+**/Output/
+**/output/
+**/Objects/
+**/Listings/
+**/Debug/
+
+# Keil/ARM/GCC generated outputs
+*.o
+*.obj
+*.d
+*.dep
+*.crf
+*.axf
+*.elf
+*.hex
+*.bin
+*.s19
+*.map
+*.lst
+*.lnp
+*.htm
+*.uvopt
+*.uvoptx
+*.uvgui
+*.uvgui.*
+*.uvguix.*
+
+# Vivado generated outputs. Keep project/IP descriptors such as *.xpr, *.xci and *.xdc.
+.Xil/
+*.jou
+*.str
+*.wdb
+*.dcp
+*.rpt
+*.rpx
+*.pb
+*.runs/
+*.sim/
+*.cache/
+*.hw/
+*.ip_user_files/
+**/*.srcs/sources_1/ip/**/hdl/
+**/*.srcs/sources_1/ip/**/sim/
+**/*.srcs/sources_1/ip/**/synth/
+**/*.srcs/sources_1/ip/**/simulation/
+**/*.srcs/sources_1/ip/**/*_sim_netlist.v
+**/*.srcs/sources_1/ip/**/*_sim_netlist.vhdl
+**/*.srcs/sources_1/ip/**/*.xml
+
+# Optional LVGL reference/demo payloads. Keep nearby README/text docs.
+**/Middlerwares/LVGL/lvgl/demos/**
+!**/Middlerwares/LVGL/lvgl/demos/**/
+!**/Middlerwares/LVGL/lvgl/demos/**/*.md
+!**/Middlerwares/LVGL/lvgl/demos/**/*.txt
+**/Middlerwares/LVGL/lvgl/examples/assets/**
+!**/Middlerwares/LVGL/lvgl/examples/assets/**/
+!**/Middlerwares/LVGL/lvgl/examples/assets/**/*.md
+!**/Middlerwares/LVGL/lvgl/examples/assets/**/*.txt
