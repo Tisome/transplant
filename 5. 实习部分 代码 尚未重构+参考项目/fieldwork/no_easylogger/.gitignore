@@ -1,0 +1,11 @@
+build/
+Debug/
+Objects/
+Listings/
+*.o
+*.axf
+*.hex
+*.bin
+*.uvoptx
+*.uvguix.*
+*.log
